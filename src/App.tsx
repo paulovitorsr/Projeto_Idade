@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, FormEvent } from 'react'
 
 import './App.css'
 
@@ -8,8 +8,8 @@ interface ResultadoProps{
 }
 
 function App() {
-  const [name, setName] = useState("")
-  const [idade, setIdade] = useState()
+  const [name, setName] = useState<string>("")
+  const [idade, setIdade] = useState< number | string>()
   const [result, setResult] = useState<ResultadoProps>()
 
   function handleResult(e: FormEvent){
@@ -42,7 +42,6 @@ function App() {
           <p>Seu ano de nascimento :</p>
           <input 
             type="number" 
-            name="nome"
             value={idade}
             onChange={(e) => setIdade(e.target.value)}
           />
